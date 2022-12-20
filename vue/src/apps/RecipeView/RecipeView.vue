@@ -101,9 +101,9 @@
                                     v-bind:key="`substep_${sub_step.id}`">
                                     <div>
                                         <b-button v-b-toggle.collapse-sub-ingredients variant="outline-primary">
-                                            
+                                            <h5 class="card-title">
                                                     {{step.step_recipe_data.name + $t(" Ingredients ")}}
-                                            
+                                            </h5> 
                                             <span class="when-opened">
                                                     <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                             </span>
