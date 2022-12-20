@@ -101,8 +101,15 @@
                                     v-bind:key="`substep_${sub_step.id}`">
                                     <div>
                                         <b-button v-b-toggle.collapse-sub-ingredients variant="outline-primary">
-                                            <h5 class="card-title">
-                                                    {{step.step_recipe_data.name + $t(" Ingredients")}}</h5>
+                                            
+                                                    {{step.step_recipe_data.name + $t(" Ingredients ")}}
+                                            
+                                            <span class="when-opened">
+                                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="when-closed">
+                                                    <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                                            </span> 
                                         </b-button>
                                         <b-collapse id="collapse-sub-ingredients" class="mt-2">
                                             <ingredients-card 
@@ -365,6 +372,13 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+    .collapsed > .when-opened,
+    :not(.collapsed) > .when-closed {
+        display: none;
+    }
+</style>
 
 <style>
 #app > div > div {
